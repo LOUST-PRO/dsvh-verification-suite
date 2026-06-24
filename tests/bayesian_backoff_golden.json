@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-23",
+  "description": "Bayesian backoff keep-alive timing distribution",
+  "paper_section": "Section 8 (Stochastic State Synchronization Protocol)",
+  "model": {
+    "type": "Weibull",
+    "lambda_scale": 0.85,
+    "k_shape": 1.7,
+    "evidence": "hit/miss gamma parameters per Section 8 (posterior over hit/miss ratio)",
+    "cdf_formula": "F(t) = 1 - exp(-(t/lambda)^k)",
+    "backoff_formula": "tau_n = (1 - F(t)) * 1000 * (0.4 + 0.6 * S_n)"
+  },
+  "vectors": [
+    {
+      "id": "backoff_001",
+      "scenario": "cache_hit_after_miss",
+      "keep_alive_probe_seconds": 0.4,
+      "gamma_hit": 0.92,
+      "gamma_miss": 0.31,
+      "expected_backoff_ms": 757.565732,
+      "indicator_function_S_n": 1
+    },
+    {
+      "id": "backoff_002",
+      "scenario": "cache_miss_after_hit",
+      "keep_alive_probe_seconds": 0.2,
+      "gamma_hit": 0.18,
+      "gamma_miss": 0.71,
+      "expected_backoff_ms": 367.237686,
+      "indicator_function_S_n": 0
+    },
+    {
+      "id": "backoff_003",
+      "scenario": "transition_hit_to_miss",
+      "keep_alive_probe_seconds": 1.1,
+      "gamma_hit": 0.95,
+      "gamma_miss": 0.3,
+      "expected_backoff_ms": 212.230026,
+      "indicator_function_S_n": 1
+    },
+    {
+      "id": "backoff_004",
+      "scenario": "transition_miss_to_hit",
+      "keep_alive_probe_seconds": 0.8,
+      "gamma_hit": 0.27,
+      "gamma_miss": 0.85,
+      "expected_backoff_ms": 162.291382,
+      "indicator_function_S_n": 0
+    },
+    {
+      "id": "backoff_005",
+      "scenario": "stable_hit_warm",
+      "keep_alive_probe_seconds": 0.5,
+      "gamma_hit": 0.99,
+      "gamma_miss": 0.05,
+      "expected_backoff_ms": 666.490274,
+      "indicator_function_S_n": 1
+    },
+    {
+      "id": "backoff_006",
+      "scenario": "stable_miss_cold",
+      "keep_alive_probe_seconds": 0.3,
+      "gamma_hit": 0.1,
+      "gamma_miss": 0.9,
+      "expected_backoff_ms": 337.380666,
+      "indicator_function_S_n": 0
+    },
+    {
+      "id": "backoff_007",
+      "scenario": "eviction_event",
+      "keep_alive_probe_seconds": 2.0,
+      "gamma_hit": 0.45,
+      "gamma_miss": 0.55,
+      "expected_backoff_ms": 5.520982,
+      "indicator_function_S_n": 0
+    },
+    {
+      "id": "backoff_008",
+      "scenario": "prefill_warmup_hit",
+      "keep_alive_probe_seconds": 0.1,
+      "gamma_hit": 0.88,
+      "gamma_miss": 0.12,
+      "expected_backoff_ms": 974.040941,
+      "indicator_function_S_n": 1
+    },
+    {
+      "id": "backoff_009",
+      "scenario": "prefill_warmup_miss",
+      "keep_alive_probe_seconds": 0.1,
+      "gamma_hit": 0.2,
+      "gamma_miss": 0.8,
+      "expected_backoff_ms": 389.616376,
+      "indicator_function_S_n": 0
+    },
+    {
+      "id": "backoff_010",
+      "scenario": "back_to_back_hit",
+      "keep_alive_probe_seconds": 0.6,
+      "gamma_hit": 0.97,
+      "gamma_miss": 0.03,
+      "expected_backoff_ms": 575.133787,
+      "indicator_function_S_n": 1
+    },
+    {
+      "id": "backoff_011",
+      "scenario": "back_to_back_miss",
+      "keep_alive_probe_seconds": 0.6,
+      "gamma_hit": 0.15,
+      "gamma_miss": 0.85,
+      "expected_backoff_ms": 230.053515,
+      "indicator_function_S_n": 0
+    },
+    {
+      "id": "backoff_012",
+      "scenario": "oscillation_1hz",
+      "keep_alive_probe_seconds": 0.5,
+      "gamma_hit": 0.51,
+      "gamma_miss": 0.49,
+      "expected_backoff_ms": 666.490274,
+      "indicator_function_S_n": 1
+    },
+    {
+      "id": "backoff_013",
+      "scenario": "long_idle_then_hit",
+      "keep_alive_probe_seconds": 5.0,
+      "gamma_hit": 0.93,
+      "gamma_miss": 0.4,
+      "expected_backoff_ms": 1e-06,
+      "indicator_function_S_n": 1
+    },
+    {
+      "id": "backoff_014",
+      "scenario": "long_idle_then_miss",
+      "keep_alive_probe_seconds": 5.0,
+      "gamma_hit": 0.35,
+      "gamma_miss": 0.75,
+      "expected_backoff_ms": 1e-06,
+      "indicator_function_S_n": 0
+    },
+    {
+      "id": "backoff_015",
+      "scenario": "first_probe",
+      "keep_alive_probe_seconds": 0.0,
+      "gamma_hit": 0.5,
+      "gamma_miss": 0.5,
+      "expected_backoff_ms": 1000.0,
+      "indicator_function_S_n": 1
+    },
+    {
+      "id": "backoff_016",
+      "scenario": "bursty_three_hits",
+      "keep_alive_probe_seconds": 0.7,
+      "gamma_hit": 0.99,
+      "gamma_miss": 0.01,
+      "expected_backoff_ms": 487.299262,
+      "indicator_function_S_n": 1
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-23",
+  "description": "FNV-1a 64-bit hash vectors for canonical test strings",
+  "algorithm": {
+    "name": "FNV-1a 64-bit",
+    "offset_basis": "0xcbf29ce484222325",
+    "prime": "0x100000001b3",
+    "reference": "http://www.isthe.com/chongo/tech/comp/fnv/"
+  },
+  "paper_section": "Section 3.1 (FNV-1a 64-bit hashing)",
+  "vectors": [
+    {
+      "id": "fnv1a_001",
+      "input_string": "",
+      "expected_hash_hex": "0xcbf29ce484222325",
+      "expected_hash_decimal": 14695981039346656037
+    },
+    {
+      "id": "fnv1a_002",
+      "input_string": "a",
+      "expected_hash_hex": "0xaf63dc4c8601ec8c",
+      "expected_hash_decimal": 12638187200555641996
+    },
+    {
+      "id": "fnv1a_003",
+      "input_string": "abc",
+      "expected_hash_hex": "0xe71fa2190541574b",
+      "expected_hash_decimal": 16654208175385433931
+    },
+    {
+      "id": "fnv1a_004",
+      "input_string": "hello world",
+      "expected_hash_hex": "0x779a65e7023cd2e7",
+      "expected_hash_decimal": 8618312879776256743
+    },
+    {
+      "id": "fnv1a_005",
+      "input_string": "the quick brown fox",
+      "expected_hash_hex": "0x59aeb7b40bd8c122",
+      "expected_hash_decimal": 6462304499243991330
+    },
+    {
+      "id": "fnv1a_006",
+      "input_string": "The quick brown fox",
+      "expected_hash_hex": "0x2374316b9b449782",
+      "expected_hash_decimal": 2554721226862139266
+    },
+    {
+      "id": "fnv1a_007",
+      "input_string": "Lorem ipsum dolor sit amet",
+      "expected_hash_hex": "0xd4a0febfe91af629",
+      "expected_hash_decimal": 15321526032517494313
+    },
+    {
+      "id": "fnv1a_008",
+      "input_string": "Deterministic Sovereign RAG",
+      "expected_hash_hex": "0x15a17f9297b1e6cb",
+      "expected_hash_decimal": 1558667213633873611
+    },
+    {
+      "id": "fnv1a_009",
+      "input_string": "loust-pro-dsvh-verification-suite",
+      "expected_hash_hex": "0xa334f045a51e02ff",
+      "expected_hash_decimal": 11760288708884824831
+    },
+    {
+      "id": "fnv1a_010",
+      "input_string": "FNV-1a 64-bit",
+      "expected_hash_hex": "0xdfe81e60533764be",
+      "expected_hash_decimal": 16134179064116634814
+    },
+    {
+      "id": "fnv1a_011",
+      "input_string": "0123456789",
+      "expected_hash_hex": "0x50c0aafd8b4330b2",
+      "expected_hash_decimal": 5818838724502565042
+    },
+    {
+      "id": "fnv1a_012",
+      "input_string": "!@#$%^&*()",
+      "expected_hash_hex": "0x4a7f734b06da6fa7",
+      "expected_hash_decimal": 5368136046923640743
+    },
+    {
+      "id": "fnv1a_013",
+      "input_string": "spamspamspamspam",
+      "expected_hash_hex": "0xc76bd9b2083fcd5d",
+      "expected_hash_decimal": 14369818394721504605
+    },
+    {
+      "id": "fnv1a_014",
+      "input_string": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "expected_hash_hex": "0xdb007849f35ebbe5",
+      "expected_hash_decimal": 15780745353317235685
+    },
+    {
+      "id": "fnv1a_015",
+      "input_string": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "expected_hash_hex": "0x57fc415dd1387da5",
+      "expected_hash_decimal": 6340014246628720037
+    },
+    {
+      "id": "fnv1a_016",
+      "input_string": "The Zen of Python, by Tim Peters",
+      "expected_hash_hex": "0x9faf4ea95e8eb49e",
+      "expected_hash_decimal": 11506502062297756830
+    },
+    {
+      "id": "fnv1a_017",
+      "input_string": "café résumé naïve",
+      "expected_hash_hex": "0x6b71a22e4cc979a4",
+      "expected_hash_decimal": 7742147554167060900
+    },
+    {
+      "id": "fnv1a_018",
+      "input_string": "日本語テスト",
+      "expected_hash_hex": "0x16921e1cd55f4017",
+      "expected_hash_decimal": 1626395524621877271
+    },
+    {
+      "id": "fnv1a_019",
+      "input_string": "🚀🌑✨",
+      "expected_hash_hex": "0x67a0817fc5208816",
+      "expected_hash_decimal": 7467110567948355606
+    },
+    {
+      "id": "fnv1a_020",
+      "input_string": "user_query::find similar documents in vector index",
+      "expected_hash_hex": "0xe712de4913d5fc3b",
+      "expected_hash_decimal": 16650615177788914747
+    },
+    {
+      "id": "fnv1a_021",
+      "input_string": "\n\r\t",
+      "expected_hash_hex": "0x2fbfbb189cf9a89b",
+      "expected_hash_decimal": 3440674354721564827
+    },
+    {
+      "id": "fnv1a_022",
+      "input_string": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "expected_hash_hex": "0x51bfc41078b37325",
+      "expected_hash_decimal": 5890642412647445285
+    },
+    {
+      "id": "fnv1a_023",
+      "input_string": "MixedCASE and 123 Numbers",
+      "expected_hash_hex": "0xffea14569e52c7db",
+      "expected_hash_decimal": 18440573986477885403
+    },
+    {
+      "id": "fnv1a_024",
+      "input_string": "    leading and trailing    ",
+      "expected_hash_hex": "0x573d9f30a9f420d0",
+      "expected_hash_decimal": 6286355686237675728
+    }
+  ]
+}

@@ -1,0 +1,2934 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-23",
+  "description": "Zero-token keep-alive probe timing trace",
+  "paper_section": "Section 9 (Zero-Prefill Keep-Alive Protocol)",
+  "trace_format": {
+    "t": "monotonic milliseconds since trace start",
+    "action": "probe | hit | miss",
+    "rtt_us": "round-trip time in microseconds",
+    "prefill_tokens": "always 0 in zero-prefill protocol",
+    "tau_n_index": "probe index n",
+    "S_n_indicator": "1 if hit, 0 otherwise"
+  },
+  "model": {
+    "rng": "linear congruential (LCG) — stdlib only, deterministic",
+    "params": {
+      "a": 1103515245,
+      "c": 12345,
+      "m": 2147483647
+    }
+  },
+  "traces": [
+    {
+      "trace_id": "zt_001",
+      "events": [
+        {
+          "t": 755,
+          "action": "hit",
+          "rtt_us": 2349,
+          "prefill_tokens": 0,
+          "tau_n_index": 0,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 1543,
+          "action": "miss",
+          "rtt_us": 3888,
+          "prefill_tokens": 0,
+          "tau_n_index": 1,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 1664,
+          "action": "hit",
+          "rtt_us": 2895,
+          "prefill_tokens": 0,
+          "tau_n_index": 2,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 2492,
+          "action": "hit",
+          "rtt_us": 2042,
+          "prefill_tokens": 0,
+          "tau_n_index": 3,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 2925,
+          "action": "hit",
+          "rtt_us": 2593,
+          "prefill_tokens": 0,
+          "tau_n_index": 4,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 3235,
+          "action": "probe",
+          "rtt_us": 3188,
+          "prefill_tokens": 0,
+          "tau_n_index": 5,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 3496,
+          "action": "hit",
+          "rtt_us": 2659,
+          "prefill_tokens": 0,
+          "tau_n_index": 6,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 4354,
+          "action": "hit",
+          "rtt_us": 3614,
+          "prefill_tokens": 0,
+          "tau_n_index": 7,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 4575,
+          "action": "hit",
+          "rtt_us": 5013,
+          "prefill_tokens": 0,
+          "tau_n_index": 8,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 4797,
+          "action": "hit",
+          "rtt_us": 3192,
+          "prefill_tokens": 0,
+          "tau_n_index": 9,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 5620,
+          "action": "hit",
+          "rtt_us": 1527,
+          "prefill_tokens": 0,
+          "tau_n_index": 10,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 5722,
+          "action": "miss",
+          "rtt_us": 1218,
+          "prefill_tokens": 0,
+          "tau_n_index": 11,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 5951,
+          "action": "probe",
+          "rtt_us": 5001,
+          "prefill_tokens": 0,
+          "tau_n_index": 12,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 6703,
+          "action": "probe",
+          "rtt_us": 2172,
+          "prefill_tokens": 0,
+          "tau_n_index": 13,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 6946,
+          "action": "hit",
+          "rtt_us": 3147,
+          "prefill_tokens": 0,
+          "tau_n_index": 14,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 7022,
+          "action": "hit",
+          "rtt_us": 1382,
+          "prefill_tokens": 0,
+          "tau_n_index": 15,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 7631,
+          "action": "hit",
+          "rtt_us": 1789,
+          "prefill_tokens": 0,
+          "tau_n_index": 16,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 8463,
+          "action": "hit",
+          "rtt_us": 5760,
+          "prefill_tokens": 0,
+          "tau_n_index": 17,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 8614,
+          "action": "hit",
+          "rtt_us": 1375,
+          "prefill_tokens": 0,
+          "tau_n_index": 18,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 8946,
+          "action": "probe",
+          "rtt_us": 2122,
+          "prefill_tokens": 0,
+          "tau_n_index": 19,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 9421,
+          "action": "probe",
+          "rtt_us": 5361,
+          "prefill_tokens": 0,
+          "tau_n_index": 20,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 10077,
+          "action": "hit",
+          "rtt_us": 4740,
+          "prefill_tokens": 0,
+          "tau_n_index": 21,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 10758,
+          "action": "hit",
+          "rtt_us": 1587,
+          "prefill_tokens": 0,
+          "tau_n_index": 22,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 10968,
+          "action": "probe",
+          "rtt_us": 5870,
+          "prefill_tokens": 0,
+          "tau_n_index": 23,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 11409,
+          "action": "hit",
+          "rtt_us": 1829,
+          "prefill_tokens": 0,
+          "tau_n_index": 24,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 11789,
+          "action": "hit",
+          "rtt_us": 2440,
+          "prefill_tokens": 0,
+          "tau_n_index": 25,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 12764,
+          "action": "hit",
+          "rtt_us": 2055,
+          "prefill_tokens": 0,
+          "tau_n_index": 26,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 13428,
+          "action": "probe",
+          "rtt_us": 2770,
+          "prefill_tokens": 0,
+          "tau_n_index": 27,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 14211,
+          "action": "hit",
+          "rtt_us": 1625,
+          "prefill_tokens": 0,
+          "tau_n_index": 28,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 14529,
+          "action": "hit",
+          "rtt_us": 1804,
+          "prefill_tokens": 0,
+          "tau_n_index": 29,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 15286,
+          "action": "probe",
+          "rtt_us": 5851,
+          "prefill_tokens": 0,
+          "tau_n_index": 30,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 15758,
+          "action": "probe",
+          "rtt_us": 5174,
+          "prefill_tokens": 0,
+          "tau_n_index": 31,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 16217,
+          "action": "hit",
+          "rtt_us": 4557,
+          "prefill_tokens": 0,
+          "tau_n_index": 32,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 17091,
+          "action": "miss",
+          "rtt_us": 5136,
+          "prefill_tokens": 0,
+          "tau_n_index": 33,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 17862,
+          "action": "probe",
+          "rtt_us": 1647,
+          "prefill_tokens": 0,
+          "tau_n_index": 34,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 18036,
+          "action": "probe",
+          "rtt_us": 2266,
+          "prefill_tokens": 0,
+          "tau_n_index": 35,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 18459,
+          "action": "hit",
+          "rtt_us": 4097,
+          "prefill_tokens": 0,
+          "tau_n_index": 36,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 19343,
+          "action": "hit",
+          "rtt_us": 4500,
+          "prefill_tokens": 0,
+          "tau_n_index": 37,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 19624,
+          "action": "hit",
+          "rtt_us": 3715,
+          "prefill_tokens": 0,
+          "tau_n_index": 38,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 20502,
+          "action": "probe",
+          "rtt_us": 2686,
+          "prefill_tokens": 0,
+          "tau_n_index": 39,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 20759,
+          "action": "hit",
+          "rtt_us": 2101,
+          "prefill_tokens": 0,
+          "tau_n_index": 40,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 21457,
+          "action": "hit",
+          "rtt_us": 3480,
+          "prefill_tokens": 0,
+          "tau_n_index": 41,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 21636,
+          "action": "miss",
+          "rtt_us": 3991,
+          "prefill_tokens": 0,
+          "tau_n_index": 42,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 21778,
+          "action": "hit",
+          "rtt_us": 4578,
+          "prefill_tokens": 0,
+          "tau_n_index": 43,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 22307,
+          "action": "hit",
+          "rtt_us": 5481,
+          "prefill_tokens": 0,
+          "tau_n_index": 44,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 23021,
+          "action": "hit",
+          "rtt_us": 1564,
+          "prefill_tokens": 0,
+          "tau_n_index": 45,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 23480,
+          "action": "hit",
+          "rtt_us": 1771,
+          "prefill_tokens": 0,
+          "tau_n_index": 46,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 24406,
+          "action": "hit",
+          "rtt_us": 1350,
+          "prefill_tokens": 0,
+          "tau_n_index": 47,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 25227,
+          "action": "hit",
+          "rtt_us": 2013,
+          "prefill_tokens": 0,
+          "tau_n_index": 48,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 25647,
+          "action": "hit",
+          "rtt_us": 3872,
+          "prefill_tokens": 0,
+          "tau_n_index": 49,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 26054,
+          "action": "miss",
+          "rtt_us": 1599,
+          "prefill_tokens": 0,
+          "tau_n_index": 50,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 26108,
+          "action": "hit",
+          "rtt_us": 5162,
+          "prefill_tokens": 0,
+          "tau_n_index": 51,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 26665,
+          "action": "probe",
+          "rtt_us": 2769,
+          "prefill_tokens": 0,
+          "tau_n_index": 52,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 26947,
+          "action": "probe",
+          "rtt_us": 3236,
+          "prefill_tokens": 0,
+          "tau_n_index": 53,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 27172,
+          "action": "hit",
+          "rtt_us": 4499,
+          "prefill_tokens": 0,
+          "tau_n_index": 54,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 28116,
+          "action": "hit",
+          "rtt_us": 1678,
+          "prefill_tokens": 0,
+          "tau_n_index": 55,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 28359,
+          "action": "hit",
+          "rtt_us": 3717,
+          "prefill_tokens": 0,
+          "tau_n_index": 56,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 28591,
+          "action": "probe",
+          "rtt_us": 4840,
+          "prefill_tokens": 0,
+          "tau_n_index": 57,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 29502,
+          "action": "hit",
+          "rtt_us": 5671,
+          "prefill_tokens": 0,
+          "tau_n_index": 58,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 29606,
+          "action": "hit",
+          "rtt_us": 2482,
+          "prefill_tokens": 0,
+          "tau_n_index": 59,
+          "S_n_indicator": 1
+        }
+      ]
+    },
+    {
+      "trace_id": "zt_002",
+      "events": [
+        {
+          "t": 298,
+          "action": "hit",
+          "rtt_us": 4266,
+          "prefill_tokens": 0,
+          "tau_n_index": 0,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 641,
+          "action": "hit",
+          "rtt_us": 5905,
+          "prefill_tokens": 0,
+          "tau_n_index": 1,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 1099,
+          "action": "hit",
+          "rtt_us": 2788,
+          "prefill_tokens": 0,
+          "tau_n_index": 2,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 1478,
+          "action": "probe",
+          "rtt_us": 2579,
+          "prefill_tokens": 0,
+          "tau_n_index": 3,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 2170,
+          "action": "hit",
+          "rtt_us": 2830,
+          "prefill_tokens": 0,
+          "tau_n_index": 4,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 2695,
+          "action": "hit",
+          "rtt_us": 1605,
+          "prefill_tokens": 0,
+          "tau_n_index": 5,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 3057,
+          "action": "hit",
+          "rtt_us": 3624,
+          "prefill_tokens": 0,
+          "tau_n_index": 6,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 3540,
+          "action": "hit",
+          "rtt_us": 4071,
+          "prefill_tokens": 0,
+          "tau_n_index": 7,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 3708,
+          "action": "hit",
+          "rtt_us": 5682,
+          "prefill_tokens": 0,
+          "tau_n_index": 8,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 4319,
+          "action": "hit",
+          "rtt_us": 1401,
+          "prefill_tokens": 0,
+          "tau_n_index": 9,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 5013,
+          "action": "hit",
+          "rtt_us": 4012,
+          "prefill_tokens": 0,
+          "tau_n_index": 10,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 5332,
+          "action": "hit",
+          "rtt_us": 1659,
+          "prefill_tokens": 0,
+          "tau_n_index": 11,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 6284,
+          "action": "hit",
+          "rtt_us": 1238,
+          "prefill_tokens": 0,
+          "tau_n_index": 12,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 6371,
+          "action": "hit",
+          "rtt_us": 3309,
+          "prefill_tokens": 0,
+          "tau_n_index": 13,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 7199,
+          "action": "hit",
+          "rtt_us": 5744,
+          "prefill_tokens": 0,
+          "tau_n_index": 14,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 7362,
+          "action": "hit",
+          "rtt_us": 4303,
+          "prefill_tokens": 0,
+          "tau_n_index": 15,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 7696,
+          "action": "hit",
+          "rtt_us": 1914,
+          "prefill_tokens": 0,
+          "tau_n_index": 16,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 8241,
+          "action": "hit",
+          "rtt_us": 1441,
+          "prefill_tokens": 0,
+          "tau_n_index": 17,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 8663,
+          "action": "hit",
+          "rtt_us": 1780,
+          "prefill_tokens": 0,
+          "tau_n_index": 18,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 9320,
+          "action": "hit",
+          "rtt_us": 5283,
+          "prefill_tokens": 0,
+          "tau_n_index": 19,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 9846,
+          "action": "miss",
+          "rtt_us": 2974,
+          "prefill_tokens": 0,
+          "tau_n_index": 20,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 9941,
+          "action": "probe",
+          "rtt_us": 1429,
+          "prefill_tokens": 0,
+          "tau_n_index": 21,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 10443,
+          "action": "probe",
+          "rtt_us": 1336,
+          "prefill_tokens": 0,
+          "tau_n_index": 22,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 11174,
+          "action": "miss",
+          "rtt_us": 5239,
+          "prefill_tokens": 0,
+          "tau_n_index": 23,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 11768,
+          "action": "hit",
+          "rtt_us": 1218,
+          "prefill_tokens": 0,
+          "tau_n_index": 24,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 12345,
+          "action": "hit",
+          "rtt_us": 4809,
+          "prefill_tokens": 0,
+          "tau_n_index": 25,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 12963,
+          "action": "hit",
+          "rtt_us": 4092,
+          "prefill_tokens": 0,
+          "tau_n_index": 26,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 13532,
+          "action": "hit",
+          "rtt_us": 1291,
+          "prefill_tokens": 0,
+          "tau_n_index": 27,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 13750,
+          "action": "probe",
+          "rtt_us": 5734,
+          "prefill_tokens": 0,
+          "tau_n_index": 28,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 14069,
+          "action": "hit",
+          "rtt_us": 5757,
+          "prefill_tokens": 0,
+          "tau_n_index": 29,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 14801,
+          "action": "hit",
+          "rtt_us": 5312,
+          "prefill_tokens": 0,
+          "tau_n_index": 30,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 14954,
+          "action": "hit",
+          "rtt_us": 1439,
+          "prefill_tokens": 0,
+          "tau_n_index": 31,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 15274,
+          "action": "probe",
+          "rtt_us": 3402,
+          "prefill_tokens": 0,
+          "tau_n_index": 32,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 16047,
+          "action": "hit",
+          "rtt_us": 5809,
+          "prefill_tokens": 0,
+          "tau_n_index": 33,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 16761,
+          "action": "miss",
+          "rtt_us": 4420,
+          "prefill_tokens": 0,
+          "tau_n_index": 34,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 17112,
+          "action": "hit",
+          "rtt_us": 4275,
+          "prefill_tokens": 0,
+          "tau_n_index": 35,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 17426,
+          "action": "probe",
+          "rtt_us": 3310,
+          "prefill_tokens": 0,
+          "tau_n_index": 36,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 17977,
+          "action": "hit",
+          "rtt_us": 2149,
+          "prefill_tokens": 0,
+          "tau_n_index": 37,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 18149,
+          "action": "probe",
+          "rtt_us": 1480,
+          "prefill_tokens": 0,
+          "tau_n_index": 38,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 18708,
+          "action": "hit",
+          "rtt_us": 1223,
+          "prefill_tokens": 0,
+          "tau_n_index": 39,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 19114,
+          "action": "probe",
+          "rtt_us": 2770,
+          "prefill_tokens": 0,
+          "tau_n_index": 40,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 19369,
+          "action": "probe",
+          "rtt_us": 4505,
+          "prefill_tokens": 0,
+          "tau_n_index": 41,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 20293,
+          "action": "hit",
+          "rtt_us": 5388,
+          "prefill_tokens": 0,
+          "tau_n_index": 42,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 20450,
+          "action": "hit",
+          "rtt_us": 2395,
+          "prefill_tokens": 0,
+          "tau_n_index": 43,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 20628,
+          "action": "hit",
+          "rtt_us": 1206,
+          "prefill_tokens": 0,
+          "tau_n_index": 44,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 20763,
+          "action": "hit",
+          "rtt_us": 4557,
+          "prefill_tokens": 0,
+          "tau_n_index": 45,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 20929,
+          "action": "hit",
+          "rtt_us": 5456,
+          "prefill_tokens": 0,
+          "tau_n_index": 46,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 21892,
+          "action": "hit",
+          "rtt_us": 3247,
+          "prefill_tokens": 0,
+          "tau_n_index": 47,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 22012,
+          "action": "hit",
+          "rtt_us": 5402,
+          "prefill_tokens": 0,
+          "tau_n_index": 48,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 22289,
+          "action": "hit",
+          "rtt_us": 3137,
+          "prefill_tokens": 0,
+          "tau_n_index": 49,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 22487,
+          "action": "miss",
+          "rtt_us": 5588,
+          "prefill_tokens": 0,
+          "tau_n_index": 50,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 23174,
+          "action": "hit",
+          "rtt_us": 3587,
+          "prefill_tokens": 0,
+          "tau_n_index": 51,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 24084,
+          "action": "hit",
+          "rtt_us": 4862,
+          "prefill_tokens": 0,
+          "tau_n_index": 52,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 24609,
+          "action": "hit",
+          "rtt_us": 3253,
+          "prefill_tokens": 0,
+          "tau_n_index": 53,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 25189,
+          "action": "probe",
+          "rtt_us": 2776,
+          "prefill_tokens": 0,
+          "tau_n_index": 54,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 25340,
+          "action": "probe",
+          "rtt_us": 2391,
+          "prefill_tokens": 0,
+          "tau_n_index": 55,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 25668,
+          "action": "hit",
+          "rtt_us": 2786,
+          "prefill_tokens": 0,
+          "tau_n_index": 56,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 26135,
+          "action": "hit",
+          "rtt_us": 1513,
+          "prefill_tokens": 0,
+          "tau_n_index": 57,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 26487,
+          "action": "probe",
+          "rtt_us": 3612,
+          "prefill_tokens": 0,
+          "tau_n_index": 58,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 26544,
+          "action": "probe",
+          "rtt_us": 3115,
+          "prefill_tokens": 0,
+          "tau_n_index": 59,
+          "S_n_indicator": 0
+        }
+      ]
+    },
+    {
+      "trace_id": "zt_003",
+      "events": [
+        {
+          "t": 791,
+          "action": "hit",
+          "rtt_us": 1383,
+          "prefill_tokens": 0,
+          "tau_n_index": 0,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 1639,
+          "action": "hit",
+          "rtt_us": 3122,
+          "prefill_tokens": 0,
+          "tau_n_index": 1,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 2434,
+          "action": "miss",
+          "rtt_us": 5433,
+          "prefill_tokens": 0,
+          "tau_n_index": 2,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 3314,
+          "action": "hit",
+          "rtt_us": 3116,
+          "prefill_tokens": 0,
+          "tau_n_index": 3,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 4265,
+          "action": "hit",
+          "rtt_us": 5115,
+          "prefill_tokens": 0,
+          "tau_n_index": 4,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 5005,
+          "action": "hit",
+          "rtt_us": 4822,
+          "prefill_tokens": 0,
+          "tau_n_index": 5,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 5468,
+          "action": "hit",
+          "rtt_us": 4589,
+          "prefill_tokens": 0,
+          "tau_n_index": 6,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 5576,
+          "action": "hit",
+          "rtt_us": 1776,
+          "prefill_tokens": 0,
+          "tau_n_index": 7,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 5789,
+          "action": "hit",
+          "rtt_us": 4303,
+          "prefill_tokens": 0,
+          "tau_n_index": 8,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 5839,
+          "action": "hit",
+          "rtt_us": 2362,
+          "prefill_tokens": 0,
+          "tau_n_index": 9,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 6306,
+          "action": "hit",
+          "rtt_us": 1697,
+          "prefill_tokens": 0,
+          "tau_n_index": 10,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 6744,
+          "action": "hit",
+          "rtt_us": 2100,
+          "prefill_tokens": 0,
+          "tau_n_index": 11,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 7371,
+          "action": "hit",
+          "rtt_us": 5027,
+          "prefill_tokens": 0,
+          "tau_n_index": 12,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 7841,
+          "action": "hit",
+          "rtt_us": 1694,
+          "prefill_tokens": 0,
+          "tau_n_index": 13,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 8304,
+          "action": "hit",
+          "rtt_us": 5589,
+          "prefill_tokens": 0,
+          "tau_n_index": 14,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 8554,
+          "action": "miss",
+          "rtt_us": 4472,
+          "prefill_tokens": 0,
+          "tau_n_index": 15,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 8613,
+          "action": "probe",
+          "rtt_us": 4791,
+          "prefill_tokens": 0,
+          "tau_n_index": 16,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 8773,
+          "action": "hit",
+          "rtt_us": 3970,
+          "prefill_tokens": 0,
+          "tau_n_index": 17,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 9564,
+          "action": "hit",
+          "rtt_us": 4233,
+          "prefill_tokens": 0,
+          "tau_n_index": 18,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 10448,
+          "action": "hit",
+          "rtt_us": 5692,
+          "prefill_tokens": 0,
+          "tau_n_index": 19,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 11123,
+          "action": "probe",
+          "rtt_us": 5387,
+          "prefill_tokens": 0,
+          "tau_n_index": 20,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 11509,
+          "action": "hit",
+          "rtt_us": 2918,
+          "prefill_tokens": 0,
+          "tau_n_index": 21,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 11734,
+          "action": "hit",
+          "rtt_us": 3837,
+          "prefill_tokens": 0,
+          "tau_n_index": 22,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 12036,
+          "action": "hit",
+          "rtt_us": 1856,
+          "prefill_tokens": 0,
+          "tau_n_index": 23,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 12783,
+          "action": "hit",
+          "rtt_us": 5407,
+          "prefill_tokens": 0,
+          "tau_n_index": 24,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 13655,
+          "action": "hit",
+          "rtt_us": 5130,
+          "prefill_tokens": 0,
+          "tau_n_index": 25,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 13916,
+          "action": "hit",
+          "rtt_us": 4081,
+          "prefill_tokens": 0,
+          "tau_n_index": 26,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 14292,
+          "action": "probe",
+          "rtt_us": 2564,
+          "prefill_tokens": 0,
+          "tau_n_index": 27,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 14993,
+          "action": "hit",
+          "rtt_us": 5043,
+          "prefill_tokens": 0,
+          "tau_n_index": 28,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 15313,
+          "action": "probe",
+          "rtt_us": 4910,
+          "prefill_tokens": 0,
+          "tau_n_index": 29,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 16118,
+          "action": "hit",
+          "rtt_us": 2021,
+          "prefill_tokens": 0,
+          "tau_n_index": 30,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 17000,
+          "action": "probe",
+          "rtt_us": 2504,
+          "prefill_tokens": 0,
+          "tau_n_index": 31,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 17181,
+          "action": "hit",
+          "rtt_us": 4999,
+          "prefill_tokens": 0,
+          "tau_n_index": 32,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 17951,
+          "action": "hit",
+          "rtt_us": 1682,
+          "prefill_tokens": 0,
+          "tau_n_index": 33,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 18608,
+          "action": "hit",
+          "rtt_us": 2393,
+          "prefill_tokens": 0,
+          "tau_n_index": 34,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 19038,
+          "action": "probe",
+          "rtt_us": 3532,
+          "prefill_tokens": 0,
+          "tau_n_index": 35,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 19243,
+          "action": "hit",
+          "rtt_us": 5275,
+          "prefill_tokens": 0,
+          "tau_n_index": 36,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 19363,
+          "action": "probe",
+          "rtt_us": 2550,
+          "prefill_tokens": 0,
+          "tau_n_index": 37,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 19426,
+          "action": "miss",
+          "rtt_us": 1293,
+          "prefill_tokens": 0,
+          "tau_n_index": 38,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 19568,
+          "action": "hit",
+          "rtt_us": 1808,
+          "prefill_tokens": 0,
+          "tau_n_index": 39,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 20123,
+          "action": "probe",
+          "rtt_us": 5487,
+          "prefill_tokens": 0,
+          "tau_n_index": 40,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 20787,
+          "action": "hit",
+          "rtt_us": 5530,
+          "prefill_tokens": 0,
+          "tau_n_index": 41,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 21604,
+          "action": "hit",
+          "rtt_us": 1985,
+          "prefill_tokens": 0,
+          "tau_n_index": 42,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 21776,
+          "action": "probe",
+          "rtt_us": 2964,
+          "prefill_tokens": 0,
+          "tau_n_index": 43,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 22553,
+          "action": "probe",
+          "rtt_us": 1731,
+          "prefill_tokens": 0,
+          "tau_n_index": 44,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 22961,
+          "action": "miss",
+          "rtt_us": 2750,
+          "prefill_tokens": 0,
+          "tau_n_index": 45,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 23784,
+          "action": "miss",
+          "rtt_us": 4341,
+          "prefill_tokens": 0,
+          "tau_n_index": 46,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 23932,
+          "action": "hit",
+          "rtt_us": 5144,
+          "prefill_tokens": 0,
+          "tau_n_index": 47,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 24399,
+          "action": "hit",
+          "rtt_us": 1943,
+          "prefill_tokens": 0,
+          "tau_n_index": 48,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 24631,
+          "action": "hit",
+          "rtt_us": 2402,
+          "prefill_tokens": 0,
+          "tau_n_index": 49,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 25472,
+          "action": "hit",
+          "rtt_us": 2729,
+          "prefill_tokens": 0,
+          "tau_n_index": 50,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 25842,
+          "action": "hit",
+          "rtt_us": 4060,
+          "prefill_tokens": 0,
+          "tau_n_index": 51,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 26057,
+          "action": "hit",
+          "rtt_us": 2155,
+          "prefill_tokens": 0,
+          "tau_n_index": 52,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 26825,
+          "action": "hit",
+          "rtt_us": 3270,
+          "prefill_tokens": 0,
+          "tau_n_index": 53,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 26908,
+          "action": "hit",
+          "rtt_us": 3805,
+          "prefill_tokens": 0,
+          "tau_n_index": 54,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 27314,
+          "action": "hit",
+          "rtt_us": 3104,
+          "prefill_tokens": 0,
+          "tau_n_index": 55,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 27825,
+          "action": "hit",
+          "rtt_us": 1855,
+          "prefill_tokens": 0,
+          "tau_n_index": 56,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 28625,
+          "action": "hit",
+          "rtt_us": 5034,
+          "prefill_tokens": 0,
+          "tau_n_index": 57,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 29270,
+          "action": "hit",
+          "rtt_us": 3601,
+          "prefill_tokens": 0,
+          "tau_n_index": 58,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 30132,
+          "action": "hit",
+          "rtt_us": 3748,
+          "prefill_tokens": 0,
+          "tau_n_index": 59,
+          "S_n_indicator": 1
+        }
+      ]
+    },
+    {
+      "trace_id": "zt_004",
+      "events": [
+        {
+          "t": 978,
+          "action": "hit",
+          "rtt_us": 2916,
+          "prefill_tokens": 0,
+          "tau_n_index": 0,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 1633,
+          "action": "hit",
+          "rtt_us": 5267,
+          "prefill_tokens": 0,
+          "tau_n_index": 1,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 1893,
+          "action": "hit",
+          "rtt_us": 5710,
+          "prefill_tokens": 0,
+          "tau_n_index": 2,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 2236,
+          "action": "hit",
+          "rtt_us": 4549,
+          "prefill_tokens": 0,
+          "tau_n_index": 3,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 2770,
+          "action": "probe",
+          "rtt_us": 1832,
+          "prefill_tokens": 0,
+          "tau_n_index": 4,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 3267,
+          "action": "hit",
+          "rtt_us": 1511,
+          "prefill_tokens": 0,
+          "tau_n_index": 5,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 3543,
+          "action": "miss",
+          "rtt_us": 2098,
+          "prefill_tokens": 0,
+          "tau_n_index": 6,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 4082,
+          "action": "miss",
+          "rtt_us": 1465,
+          "prefill_tokens": 0,
+          "tau_n_index": 7,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 4412,
+          "action": "hit",
+          "rtt_us": 2028,
+          "prefill_tokens": 0,
+          "tau_n_index": 8,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 4523,
+          "action": "hit",
+          "rtt_us": 1659,
+          "prefill_tokens": 0,
+          "tau_n_index": 9,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 4925,
+          "action": "hit",
+          "rtt_us": 1750,
+          "prefill_tokens": 0,
+          "tau_n_index": 10,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 5094,
+          "action": "hit",
+          "rtt_us": 1965,
+          "prefill_tokens": 0,
+          "tau_n_index": 11,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 5802,
+          "action": "hit",
+          "rtt_us": 4080,
+          "prefill_tokens": 0,
+          "tau_n_index": 12,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 6253,
+          "action": "hit",
+          "rtt_us": 3983,
+          "prefill_tokens": 0,
+          "tau_n_index": 13,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 6341,
+          "action": "hit",
+          "rtt_us": 3642,
+          "prefill_tokens": 0,
+          "tau_n_index": 14,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 6810,
+          "action": "hit",
+          "rtt_us": 3169,
+          "prefill_tokens": 0,
+          "tau_n_index": 15,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 7456,
+          "action": "hit",
+          "rtt_us": 4020,
+          "prefill_tokens": 0,
+          "tau_n_index": 16,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 7887,
+          "action": "hit",
+          "rtt_us": 5795,
+          "prefill_tokens": 0,
+          "tau_n_index": 17,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 8239,
+          "action": "hit",
+          "rtt_us": 5214,
+          "prefill_tokens": 0,
+          "tau_n_index": 18,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 9142,
+          "action": "hit",
+          "rtt_us": 2517,
+          "prefill_tokens": 0,
+          "tau_n_index": 19,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 10024,
+          "action": "hit",
+          "rtt_us": 2104,
+          "prefill_tokens": 0,
+          "tau_n_index": 20,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 10959,
+          "action": "miss",
+          "rtt_us": 3319,
+          "prefill_tokens": 0,
+          "tau_n_index": 21,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 11661,
+          "action": "hit",
+          "rtt_us": 1602,
+          "prefill_tokens": 0,
+          "tau_n_index": 22,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 11972,
+          "action": "probe",
+          "rtt_us": 1801,
+          "prefill_tokens": 0,
+          "tau_n_index": 23,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 12138,
+          "action": "hit",
+          "rtt_us": 1660,
+          "prefill_tokens": 0,
+          "tau_n_index": 24,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 12645,
+          "action": "hit",
+          "rtt_us": 2571,
+          "prefill_tokens": 0,
+          "tau_n_index": 25,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 12965,
+          "action": "hit",
+          "rtt_us": 5350,
+          "prefill_tokens": 0,
+          "tau_n_index": 26,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 13702,
+          "action": "probe",
+          "rtt_us": 5117,
+          "prefill_tokens": 0,
+          "tau_n_index": 27,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 13976,
+          "action": "hit",
+          "rtt_us": 2752,
+          "prefill_tokens": 0,
+          "tau_n_index": 28,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 14615,
+          "action": "hit",
+          "rtt_us": 2335,
+          "prefill_tokens": 0,
+          "tau_n_index": 29,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 15513,
+          "action": "hit",
+          "rtt_us": 5450,
+          "prefill_tokens": 0,
+          "tau_n_index": 30,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 16042,
+          "action": "probe",
+          "rtt_us": 3185,
+          "prefill_tokens": 0,
+          "tau_n_index": 31,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 16872,
+          "action": "hit",
+          "rtt_us": 3844,
+          "prefill_tokens": 0,
+          "tau_n_index": 32,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 17111,
+          "action": "probe",
+          "rtt_us": 5939,
+          "prefill_tokens": 0,
+          "tau_n_index": 33,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 17571,
+          "action": "hit",
+          "rtt_us": 3630,
+          "prefill_tokens": 0,
+          "tau_n_index": 34,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 17672,
+          "action": "hit",
+          "rtt_us": 3365,
+          "prefill_tokens": 0,
+          "tau_n_index": 35,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 18524,
+          "action": "probe",
+          "rtt_us": 2568,
+          "prefill_tokens": 0,
+          "tau_n_index": 36,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 19325,
+          "action": "hit",
+          "rtt_us": 3783,
+          "prefill_tokens": 0,
+          "tau_n_index": 37,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 20241,
+          "action": "hit",
+          "rtt_us": 2002,
+          "prefill_tokens": 0,
+          "tau_n_index": 38,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 20970,
+          "action": "hit",
+          "rtt_us": 2969,
+          "prefill_tokens": 0,
+          "tau_n_index": 39,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 21486,
+          "action": "hit",
+          "rtt_us": 5900,
+          "prefill_tokens": 0,
+          "tau_n_index": 40,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 21679,
+          "action": "hit",
+          "rtt_us": 1691,
+          "prefill_tokens": 0,
+          "tau_n_index": 41,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 21753,
+          "action": "miss",
+          "rtt_us": 1270,
+          "prefill_tokens": 0,
+          "tau_n_index": 42,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 22486,
+          "action": "miss",
+          "rtt_us": 1229,
+          "prefill_tokens": 0,
+          "tau_n_index": 43,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 23080,
+          "action": "hit",
+          "rtt_us": 3344,
+          "prefill_tokens": 0,
+          "tau_n_index": 44,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 23985,
+          "action": "hit",
+          "rtt_us": 5551,
+          "prefill_tokens": 0,
+          "tau_n_index": 45,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 24801,
+          "action": "hit",
+          "rtt_us": 3610,
+          "prefill_tokens": 0,
+          "tau_n_index": 46,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 25734,
+          "action": "hit",
+          "rtt_us": 1409,
+          "prefill_tokens": 0,
+          "tau_n_index": 47,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 25934,
+          "action": "hit",
+          "rtt_us": 4436,
+          "prefill_tokens": 0,
+          "tau_n_index": 48,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 26157,
+          "action": "miss",
+          "rtt_us": 3843,
+          "prefill_tokens": 0,
+          "tau_n_index": 49,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 26623,
+          "action": "probe",
+          "rtt_us": 3902,
+          "prefill_tokens": 0,
+          "tau_n_index": 50,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 26868,
+          "action": "hit",
+          "rtt_us": 3125,
+          "prefill_tokens": 0,
+          "tau_n_index": 51,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 27000,
+          "action": "hit",
+          "rtt_us": 3736,
+          "prefill_tokens": 0,
+          "tau_n_index": 52,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 27589,
+          "action": "hit",
+          "rtt_us": 2327,
+          "prefill_tokens": 0,
+          "tau_n_index": 53,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 27785,
+          "action": "miss",
+          "rtt_us": 3234,
+          "prefill_tokens": 0,
+          "tau_n_index": 54,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 28064,
+          "action": "hit",
+          "rtt_us": 5737,
+          "prefill_tokens": 0,
+          "tau_n_index": 55,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 28384,
+          "action": "hit",
+          "rtt_us": 1372,
+          "prefill_tokens": 0,
+          "tau_n_index": 56,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 29083,
+          "action": "hit",
+          "rtt_us": 2411,
+          "prefill_tokens": 0,
+          "tau_n_index": 57,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 29823,
+          "action": "hit",
+          "rtt_us": 3078,
+          "prefill_tokens": 0,
+          "tau_n_index": 58,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 30548,
+          "action": "hit",
+          "rtt_us": 3677,
+          "prefill_tokens": 0,
+          "tau_n_index": 59,
+          "S_n_indicator": 1
+        }
+      ]
+    },
+    {
+      "trace_id": "zt_005",
+      "events": [
+        {
+          "t": 643,
+          "action": "probe",
+          "rtt_us": 2209,
+          "prefill_tokens": 0,
+          "tau_n_index": 0,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 845,
+          "action": "hit",
+          "rtt_us": 3188,
+          "prefill_tokens": 0,
+          "tau_n_index": 1,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 1234,
+          "action": "hit",
+          "rtt_us": 4195,
+          "prefill_tokens": 0,
+          "tau_n_index": 2,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 1896,
+          "action": "miss",
+          "rtt_us": 3550,
+          "prefill_tokens": 0,
+          "tau_n_index": 3,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 1975,
+          "action": "hit",
+          "rtt_us": 2837,
+          "prefill_tokens": 0,
+          "tau_n_index": 4,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 2807,
+          "action": "probe",
+          "rtt_us": 4856,
+          "prefill_tokens": 0,
+          "tau_n_index": 5,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 3588,
+          "action": "probe",
+          "rtt_us": 2615,
+          "prefill_tokens": 0,
+          "tau_n_index": 6,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 4378,
+          "action": "hit",
+          "rtt_us": 1666,
+          "prefill_tokens": 0,
+          "tau_n_index": 7,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 5063,
+          "action": "probe",
+          "rtt_us": 4297,
+          "prefill_tokens": 0,
+          "tau_n_index": 8,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 5169,
+          "action": "hit",
+          "rtt_us": 5372,
+          "prefill_tokens": 0,
+          "tau_n_index": 9,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 6082,
+          "action": "hit",
+          "rtt_us": 4875,
+          "prefill_tokens": 0,
+          "tau_n_index": 10,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 6892,
+          "action": "hit",
+          "rtt_us": 1638,
+          "prefill_tokens": 0,
+          "tau_n_index": 11,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 7373,
+          "action": "hit",
+          "rtt_us": 2493,
+          "prefill_tokens": 0,
+          "tau_n_index": 12,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 7591,
+          "action": "hit",
+          "rtt_us": 5376,
+          "prefill_tokens": 0,
+          "tau_n_index": 13,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 8224,
+          "action": "probe",
+          "rtt_us": 3551,
+          "prefill_tokens": 0,
+          "tau_n_index": 14,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 8368,
+          "action": "hit",
+          "rtt_us": 4938,
+          "prefill_tokens": 0,
+          "tau_n_index": 15,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 8651,
+          "action": "probe",
+          "rtt_us": 4145,
+          "prefill_tokens": 0,
+          "tau_n_index": 16,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 9477,
+          "action": "miss",
+          "rtt_us": 2948,
+          "prefill_tokens": 0,
+          "tau_n_index": 17,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 10216,
+          "action": "hit",
+          "rtt_us": 3699,
+          "prefill_tokens": 0,
+          "tau_n_index": 18,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 10496,
+          "action": "hit",
+          "rtt_us": 2862,
+          "prefill_tokens": 0,
+          "tau_n_index": 19,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 11033,
+          "action": "probe",
+          "rtt_us": 3301,
+          "prefill_tokens": 0,
+          "tau_n_index": 20,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 11189,
+          "action": "probe",
+          "rtt_us": 5640,
+          "prefill_tokens": 0,
+          "tau_n_index": 21,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 12084,
+          "action": "hit",
+          "rtt_us": 3847,
+          "prefill_tokens": 0,
+          "tau_n_index": 22,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 12764,
+          "action": "hit",
+          "rtt_us": 4882,
+          "prefill_tokens": 0,
+          "tau_n_index": 23,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 13715,
+          "action": "hit",
+          "rtt_us": 3929,
+          "prefill_tokens": 0,
+          "tau_n_index": 24,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 14133,
+          "action": "hit",
+          "rtt_us": 2508,
+          "prefill_tokens": 0,
+          "tau_n_index": 25,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 14970,
+          "action": "hit",
+          "rtt_us": 3803,
+          "prefill_tokens": 0,
+          "tau_n_index": 26,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 15966,
+          "action": "hit",
+          "rtt_us": 1462,
+          "prefill_tokens": 0,
+          "tau_n_index": 27,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 16525,
+          "action": "miss",
+          "rtt_us": 5709,
+          "prefill_tokens": 0,
+          "tau_n_index": 28,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 17431,
+          "action": "probe",
+          "rtt_us": 3344,
+          "prefill_tokens": 0,
+          "tau_n_index": 29,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 18240,
+          "action": "hit",
+          "rtt_us": 1455,
+          "prefill_tokens": 0,
+          "tau_n_index": 30,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 19102,
+          "action": "hit",
+          "rtt_us": 2842,
+          "prefill_tokens": 0,
+          "tau_n_index": 31,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 19511,
+          "action": "hit",
+          "rtt_us": 4033,
+          "prefill_tokens": 0,
+          "tau_n_index": 32,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 19661,
+          "action": "hit",
+          "rtt_us": 1748,
+          "prefill_tokens": 0,
+          "tau_n_index": 33,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 20226,
+          "action": "hit",
+          "rtt_us": 3395,
+          "prefill_tokens": 0,
+          "tau_n_index": 34,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 21034,
+          "action": "hit",
+          "rtt_us": 3070,
+          "prefill_tokens": 0,
+          "tau_n_index": 35,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 21519,
+          "action": "hit",
+          "rtt_us": 4149,
+          "prefill_tokens": 0,
+          "tau_n_index": 36,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 21775,
+          "action": "probe",
+          "rtt_us": 5464,
+          "prefill_tokens": 0,
+          "tau_n_index": 37,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 21890,
+          "action": "probe",
+          "rtt_us": 3927,
+          "prefill_tokens": 0,
+          "tau_n_index": 38,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 22860,
+          "action": "miss",
+          "rtt_us": 2082,
+          "prefill_tokens": 0,
+          "tau_n_index": 39,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 23251,
+          "action": "hit",
+          "rtt_us": 4649,
+          "prefill_tokens": 0,
+          "tau_n_index": 40,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 23823,
+          "action": "probe",
+          "rtt_us": 1692,
+          "prefill_tokens": 0,
+          "tau_n_index": 41,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 24620,
+          "action": "hit",
+          "rtt_us": 5227,
+          "prefill_tokens": 0,
+          "tau_n_index": 42,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 25046,
+          "action": "hit",
+          "rtt_us": 4806,
+          "prefill_tokens": 0,
+          "tau_n_index": 43,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 25663,
+          "action": "hit",
+          "rtt_us": 2909,
+          "prefill_tokens": 0,
+          "tau_n_index": 44,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 26433,
+          "action": "miss",
+          "rtt_us": 4896,
+          "prefill_tokens": 0,
+          "tau_n_index": 45,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 26590,
+          "action": "hit",
+          "rtt_us": 3839,
+          "prefill_tokens": 0,
+          "tau_n_index": 46,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 27524,
+          "action": "hit",
+          "rtt_us": 2730,
+          "prefill_tokens": 0,
+          "tau_n_index": 47,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 28169,
+          "action": "hit",
+          "rtt_us": 5777,
+          "prefill_tokens": 0,
+          "tau_n_index": 48,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 28885,
+          "action": "hit",
+          "rtt_us": 5348,
+          "prefill_tokens": 0,
+          "tau_n_index": 49,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 29170,
+          "action": "hit",
+          "rtt_us": 1811,
+          "prefill_tokens": 0,
+          "tau_n_index": 50,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 29648,
+          "action": "hit",
+          "rtt_us": 2254,
+          "prefill_tokens": 0,
+          "tau_n_index": 51,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 29833,
+          "action": "hit",
+          "rtt_us": 4997,
+          "prefill_tokens": 0,
+          "tau_n_index": 52,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 29951,
+          "action": "hit",
+          "rtt_us": 3816,
+          "prefill_tokens": 0,
+          "tau_n_index": 53,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 30564,
+          "action": "hit",
+          "rtt_us": 1255,
+          "prefill_tokens": 0,
+          "tau_n_index": 54,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 30716,
+          "action": "hit",
+          "rtt_us": 1586,
+          "prefill_tokens": 0,
+          "tau_n_index": 55,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 31005,
+          "action": "miss",
+          "rtt_us": 2041,
+          "prefill_tokens": 0,
+          "tau_n_index": 56,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 31657,
+          "action": "hit",
+          "rtt_us": 4012,
+          "prefill_tokens": 0,
+          "tau_n_index": 57,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 32640,
+          "action": "hit",
+          "rtt_us": 2939,
+          "prefill_tokens": 0,
+          "tau_n_index": 58,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 33516,
+          "action": "miss",
+          "rtt_us": 5398,
+          "prefill_tokens": 0,
+          "tau_n_index": 59,
+          "S_n_indicator": 0
+        }
+      ]
+    },
+    {
+      "trace_id": "zt_006",
+      "events": [
+        {
+          "t": 138,
+          "action": "miss",
+          "rtt_us": 5982,
+          "prefill_tokens": 0,
+          "tau_n_index": 0,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 359,
+          "action": "hit",
+          "rtt_us": 5781,
+          "prefill_tokens": 0,
+          "tau_n_index": 1,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 1127,
+          "action": "probe",
+          "rtt_us": 2808,
+          "prefill_tokens": 0,
+          "tau_n_index": 2,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 1206,
+          "action": "hit",
+          "rtt_us": 2743,
+          "prefill_tokens": 0,
+          "tau_n_index": 3,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 2200,
+          "action": "hit",
+          "rtt_us": 4482,
+          "prefill_tokens": 0,
+          "tau_n_index": 4,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 3039,
+          "action": "probe",
+          "rtt_us": 5833,
+          "prefill_tokens": 0,
+          "tau_n_index": 5,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 3619,
+          "action": "hit",
+          "rtt_us": 2556,
+          "prefill_tokens": 0,
+          "tau_n_index": 6,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 3982,
+          "action": "hit",
+          "rtt_us": 4811,
+          "prefill_tokens": 0,
+          "tau_n_index": 7,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 4926,
+          "action": "hit",
+          "rtt_us": 2534,
+          "prefill_tokens": 0,
+          "tau_n_index": 8,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 5295,
+          "action": "hit",
+          "rtt_us": 5373,
+          "prefill_tokens": 0,
+          "tau_n_index": 9,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 6285,
+          "action": "hit",
+          "rtt_us": 1792,
+          "prefill_tokens": 0,
+          "tau_n_index": 10,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 6490,
+          "action": "hit",
+          "rtt_us": 1247,
+          "prefill_tokens": 0,
+          "tau_n_index": 11,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 6614,
+          "action": "hit",
+          "rtt_us": 3402,
+          "prefill_tokens": 0,
+          "tau_n_index": 12,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 7073,
+          "action": "hit",
+          "rtt_us": 2033,
+          "prefill_tokens": 0,
+          "tau_n_index": 13,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 7301,
+          "action": "hit",
+          "rtt_us": 5636,
+          "prefill_tokens": 0,
+          "tau_n_index": 14,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 7840,
+          "action": "probe",
+          "rtt_us": 3507,
+          "prefill_tokens": 0,
+          "tau_n_index": 15,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 8422,
+          "action": "miss",
+          "rtt_us": 2350,
+          "prefill_tokens": 0,
+          "tau_n_index": 16,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 8999,
+          "action": "hit",
+          "rtt_us": 2981,
+          "prefill_tokens": 0,
+          "tau_n_index": 17,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 9625,
+          "action": "hit",
+          "rtt_us": 5896,
+          "prefill_tokens": 0,
+          "tau_n_index": 18,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 10620,
+          "action": "hit",
+          "rtt_us": 5703,
+          "prefill_tokens": 0,
+          "tau_n_index": 19,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 11340,
+          "action": "probe",
+          "rtt_us": 4050,
+          "prefill_tokens": 0,
+          "tau_n_index": 20,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 12103,
+          "action": "hit",
+          "rtt_us": 5913,
+          "prefill_tokens": 0,
+          "tau_n_index": 21,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 12943,
+          "action": "hit",
+          "rtt_us": 4300,
+          "prefill_tokens": 0,
+          "tau_n_index": 22,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 13764,
+          "action": "hit",
+          "rtt_us": 5211,
+          "prefill_tokens": 0,
+          "tau_n_index": 23,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 14558,
+          "action": "hit",
+          "rtt_us": 1910,
+          "prefill_tokens": 0,
+          "tau_n_index": 24,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 14621,
+          "action": "hit",
+          "rtt_us": 2893,
+          "prefill_tokens": 0,
+          "tau_n_index": 25,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 14979,
+          "action": "hit",
+          "rtt_us": 4048,
+          "prefill_tokens": 0,
+          "tau_n_index": 26,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 15484,
+          "action": "hit",
+          "rtt_us": 5679,
+          "prefill_tokens": 0,
+          "tau_n_index": 27,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 15872,
+          "action": "hit",
+          "rtt_us": 3866,
+          "prefill_tokens": 0,
+          "tau_n_index": 28,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 16211,
+          "action": "hit",
+          "rtt_us": 4545,
+          "prefill_tokens": 0,
+          "tau_n_index": 29,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 16529,
+          "action": "hit",
+          "rtt_us": 4180,
+          "prefill_tokens": 0,
+          "tau_n_index": 30,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 16856,
+          "action": "hit",
+          "rtt_us": 3331,
+          "prefill_tokens": 0,
+          "tau_n_index": 31,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 17078,
+          "action": "hit",
+          "rtt_us": 1982,
+          "prefill_tokens": 0,
+          "tau_n_index": 32,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 17787,
+          "action": "probe",
+          "rtt_us": 5749,
+          "prefill_tokens": 0,
+          "tau_n_index": 33,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 18337,
+          "action": "hit",
+          "rtt_us": 4888,
+          "prefill_tokens": 0,
+          "tau_n_index": 34,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 19188,
+          "action": "probe",
+          "rtt_us": 5783,
+          "prefill_tokens": 0,
+          "tau_n_index": 35,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 19270,
+          "action": "hit",
+          "rtt_us": 5474,
+          "prefill_tokens": 0,
+          "tau_n_index": 36,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 19837,
+          "action": "hit",
+          "rtt_us": 5673,
+          "prefill_tokens": 0,
+          "tau_n_index": 37,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 20393,
+          "action": "hit",
+          "rtt_us": 5468,
+          "prefill_tokens": 0,
+          "tau_n_index": 38,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 20992,
+          "action": "hit",
+          "rtt_us": 5355,
+          "prefill_tokens": 0,
+          "tau_n_index": 39,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 21746,
+          "action": "miss",
+          "rtt_us": 4934,
+          "prefill_tokens": 0,
+          "tau_n_index": 40,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 22601,
+          "action": "hit",
+          "rtt_us": 4509,
+          "prefill_tokens": 0,
+          "tau_n_index": 41,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 23595,
+          "action": "hit",
+          "rtt_us": 5856,
+          "prefill_tokens": 0,
+          "tau_n_index": 42,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 24164,
+          "action": "hit",
+          "rtt_us": 4543,
+          "prefill_tokens": 0,
+          "tau_n_index": 43,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 24398,
+          "action": "hit",
+          "rtt_us": 1258,
+          "prefill_tokens": 0,
+          "tau_n_index": 44,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 24545,
+          "action": "probe",
+          "rtt_us": 3409,
+          "prefill_tokens": 0,
+          "tau_n_index": 45,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 25319,
+          "action": "hit",
+          "rtt_us": 2212,
+          "prefill_tokens": 0,
+          "tau_n_index": 46,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 25648,
+          "action": "probe",
+          "rtt_us": 3027,
+          "prefill_tokens": 0,
+          "tau_n_index": 47,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 26068,
+          "action": "miss",
+          "rtt_us": 2446,
+          "prefill_tokens": 0,
+          "tau_n_index": 48,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 26875,
+          "action": "probe",
+          "rtt_us": 4165,
+          "prefill_tokens": 0,
+          "tau_n_index": 49,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 27419,
+          "action": "hit",
+          "rtt_us": 3496,
+          "prefill_tokens": 0,
+          "tau_n_index": 50,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 27970,
+          "action": "hit",
+          "rtt_us": 5159,
+          "prefill_tokens": 0,
+          "tau_n_index": 51,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 28640,
+          "action": "hit",
+          "rtt_us": 2674,
+          "prefill_tokens": 0,
+          "tau_n_index": 52,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 29219,
+          "action": "probe",
+          "rtt_us": 2617,
+          "prefill_tokens": 0,
+          "tau_n_index": 53,
+          "S_n_indicator": 0
+        },
+        {
+          "t": 29459,
+          "action": "hit",
+          "rtt_us": 2284,
+          "prefill_tokens": 0,
+          "tau_n_index": 54,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 30338,
+          "action": "hit",
+          "rtt_us": 1211,
+          "prefill_tokens": 0,
+          "tau_n_index": 55,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 30500,
+          "action": "hit",
+          "rtt_us": 4502,
+          "prefill_tokens": 0,
+          "tau_n_index": 56,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 30835,
+          "action": "hit",
+          "rtt_us": 3501,
+          "prefill_tokens": 0,
+          "tau_n_index": 57,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 31039,
+          "action": "hit",
+          "rtt_us": 5936,
+          "prefill_tokens": 0,
+          "tau_n_index": 58,
+          "S_n_indicator": 1
+        },
+        {
+          "t": 31472,
+          "action": "miss",
+          "rtt_us": 4175,
+          "prefill_tokens": 0,
+          "tau_n_index": 59,
+          "S_n_indicator": 0
+        }
+      ]
+    }
+  ]
+}

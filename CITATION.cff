@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this verification suite, please cite both the suite and the paper."
+type: software
+title: "DSVH Verification Suite"
+abstract: "Companion verification suite to the F80 paper 'Deterministic Sovereign RAG via Signed-Hash Projection'. Provides deterministic test vectors (FNV-1a 64-bit, L2 spherical projection, Bayesian backoff, zero-token keep-alive traces) and a math-trace drift auditor that validates the paper's mathematical claims against reproducible synthetic traces."
+authors:
+  - family-names: Mireles
+    given-names: David
+    orcid: https://orcid.org/0009-0008-4374-2254
+version: 0.1.0
+date-released: 2026-06-23
+license: Apache-2.0
+repository: https://github.com/LOUST-PRO/dsvh-verification-suite
+keywords:
+  - fnv-1a
+  - l2-normalization
+  - deterministic-rag
+  - verification-suite
+  - reproducibility
+references:
+  - type: article
+    title: "Deterministic Sovereign RAG via Signed-Hash Projection"
+    authors:
+      - family-names: Mireles
+        given-names: David
+        orcid: https://orcid.org/0009-0008-4374-2254
+    year: 2026
+    publisher: arXiv
+    identifier: "arXiv:cs.IR/2026.xxxxx"
