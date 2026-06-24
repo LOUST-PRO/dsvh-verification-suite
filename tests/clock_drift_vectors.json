@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-24",
+  "description": "Lamport happens-before and Marzullo bounded-drift vectors for the asynchronous-network defense",
+  "paper_section": "Section 4 (Asynchronous Network and Bounded Clock Drift)",
+  "model": {
+    "marzullo_formula": "intersection([c_i - delta, c_i + delta] for i in 1..N)",
+    "marzullo_intersection_law": "non-empty iff fewer than N/2 endpoints are Byzantine (each must discard its own interval first)",
+    "lamport_law": "if a -> b (happens-before) then T(a) < T(b); strictly less for the same-process chain",
+    "bounded_drift_lemma": "|tau_n - tau_n*| <= tau_n * rho + 2 * delta_max",
+    "tolerance": 1e-12,
+    "tolerance_units": "seconds (absolute, on lo/hi endpoints of the intersection and on the drift bound)"
+  },
+  "vectors": [
+    {
+      "id": "cd_001",
+      "scenario": "marzullo_three_clean_intervals_overlap_at_inner",
+      "n_clocks": 3,
+      "delta": 1.0,
+      "centers": [10.0, 11.0, 12.0],
+      "intervals": [[9.0, 11.0], [10.0, 12.0], [11.0, 13.0]],
+      "expected_intersection_lo": 11.0,
+      "expected_intersection_hi": 11.0,
+      "expected_non_empty": true
+    },
+    {
+      "id": "cd_002",
+      "scenario": "marzullo_two_singletons_agree",
+      "n_clocks": 2,
+      "delta": 0.0,
+      "centers": [5.0, 5.0],
+      "intervals": [[5.0, 5.0], [5.0, 5.0]],
+      "expected_intersection_lo": 5.0,
+      "expected_intersection_hi": 5.0,
+      "expected_non_empty": true
+    },
+    {
+      "id": "cd_003",
+      "scenario": "marzullo_disjoint_intersection_empty",
+      "n_clocks": 2,
+      "delta": 0.5,
+      "centers": [0.0, 5.0],
+      "intervals": [[-0.5, 0.5], [4.5, 5.5]],
+      "expected_intersection_lo": null,
+      "expected_intersection_hi": null,
+      "expected_non_empty": false
+    },
+    {
+      "id": "cd_004",
+      "scenario": "marzullo_wide_envelope_full_overlap",
+      "n_clocks": 4,
+      "delta": 10.0,
+      "centers": [0.0, 1.0, -1.0, 0.5],
+      "intervals": [[-10.0, 10.0], [-9.0, 11.0], [-11.0, 9.0], [-9.5, 10.5]],
+      "expected_intersection_lo": -9.0,
+      "expected_intersection_hi": 9.0,
+      "expected_non_empty": true
+    },
+    {
+      "id": "cd_005",
+      "scenario": "marzullo_single_endpoint",
+      "n_clocks": 1,
+      "delta": 0.25,
+      "centers": [2.0],
+      "intervals": [[1.75, 2.25]],
+      "expected_intersection_lo": 1.75,
+      "expected_intersection_hi": 2.25,
+      "expected_non_empty": true
+    },
+    {
+      "id": "cd_006",
+      "scenario": "lamport_strict_chain_three_events",
+      "relation": "a -> b -> c (same process, sequential)",
+      "events": [
+        {"id": "a", "T": 3.0},
+        {"id": "b", "T": 5.0},
+        {"id": "c", "T": 8.0}
+      ],
+      "expected_strict_chain": true,
+      "expected_T_a_lt_T_b": true,
+      "expected_T_b_lt_T_c": true
+    },
+    {
+      "id": "cd_007",
+      "scenario": "lamport_message_send_then_receive",
+      "relation": "send(a) -> receive(b); Lamport construction T(b) = max(T(a), recv_logical) + 1",
+      "events": [
+        {"id": "send_a", "T": 7.0},
+        {"id": "recv_b", "T": 8.0}
+      ],
+      "expected_strict_chain": true,
+      "expected_T_a_lt_T_b": true,
+      "expected_T_b_lt_T_c": null
+    },
+    {
+      "id": "cd_008",
+      "scenario": "lamport_concurrent_events_not_causally_ordered",
+      "relation": "a || b (no happens-before relation between distinct processes)",
+      "events": [
+        {"id": "a_other_proc", "T": 4.0},
+        {"id": "b_other_proc", "T": 4.0}
+      ],
+      "expected_strict_chain": false,
+      "expected_T_a_lt_T_b": false,
+      "expected_T_b_lt_T_c": null
+    },
+    {
+      "id": "cd_009",
+      "scenario": "bounded_drift_ntp_synchronized",
+      "tau_n": 200.0,
+      "rho": 1e-4,
+      "delta_max": 0.18,
+      "expected_drift_bound": 0.38,
+      "regime": "NTP-synchronized production (paper Sec 4 discussion)"
+    },
+    {
+      "id": "cd_010",
+      "scenario": "bounded_drift_free_running_tcxo",
+      "tau_n": 200.0,
+      "rho": 1e-6,
+      "delta_max": 0.18,
+      "expected_drift_bound": 0.3602,
+      "regime": "free-running TCXO, air-gapped"
+    },
+    {
+      "id": "cd_011",
+      "scenario": "bounded_drift_pathological_quartz",
+      "tau_n": 200.0,
+      "rho": 1e-3,
+      "delta_max": 0.18,
+      "expected_drift_bound": 0.56,
+      "regime": "pathological drifted quartz oscillator"
+    },
+    {
+      "id": "cd_012",
+      "scenario": "bounded_drift_short_idle_under_jitter",
+      "tau_n": 0.001,
+      "rho": 1e-4,
+      "delta_max": 0.0005,
+      "expected_drift_bound": 0.0010001,
+      "regime": "sub-millisecond probe, BGP re-route jitter dominant"
+    }
+  ]
+}

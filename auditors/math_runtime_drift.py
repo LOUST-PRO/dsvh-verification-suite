@@ -3,19 +3,22 @@
 """Math <-> trace drift auditor for the F80 paper's verification suite.
 
 Compares the mathematical claims in deterministic-sovereign-rag
-(paper Sections 3.1, 3.3, and 9) against the golden vectors and
-synthetic trace dumps in tests/.
+(paper Sections 3.1, 3.3, 4, 8, and 9) against the golden vectors
+and synthetic trace dumps in tests/.
 
-The auditor compares three independent surfaces:
+The auditor compares five independent surfaces:
 
   * paper Section 3.1  FNV-1a 64-bit determinism
   * paper Section 3.3  L2 spherical projection (Rademacher expansion to D=128)
+  * paper Section 4    Lamport/Marzullo clock-drift defense
+  * paper Section 8    Bayesian backoff (Weibull CDF + asymmetric EMA)
   * paper Section 9    Zero-Prefill Keep-Alive Protocol trace invariants
 
 This script is stdlib only: no numpy, no scipy, no requests, no network.
-Tolerance: 1e-9 for L2 norm (per Section 3.3), 1us for recomputed
-timing where applicable. Exits 0 if all checks pass, 1 if any drift
-is detected.
+Tolerance: 1e-9 for L2 norm (per Section 3.3), 1e-12 s for the
+clock-drift bound (per Section 4), 1e-6 ms for the Weibull backoff
+(per Section 8), 1us for recomputed timing where applicable. Exits 0
+if all checks pass, 1 if any drift is detected.
 
 The auditor never imports the production runtime; it reads the
 golden JSON / trace dump and re-derives the math claim from
@@ -37,6 +40,8 @@ FNV1A_MASK = 0xFFFFFFFFFFFFFFFF
 
 L2_TOLERANCE = 1e-9
 TIMING_TOLERANCE_US = 1
+BAYESIAN_TOLERANCE_MS = 1e-6
+CLOCK_DRIFT_TOLERANCE_S = 1e-12
 
 
 def fnv1a_64(data: bytes) -> int:
@@ -227,10 +232,137 @@ def audit_keepalive_trace(path: Path, report: dict) -> int:
     return 0 if drift_count == 0 else 1
 
 
+def audit_clock_drift(path: Path, report: dict) -> int:
+    with path.open("r", encoding="utf-8") as f:
+        payload = json.load(f)
+    vectors = payload["vectors"]
+    tol = CLOCK_DRIFT_TOLERANCE_S
+    checked = 0
+    drifts = []
+
+    def marzullo_intersect(intervals):
+        if not intervals:
+            return None
+        lo = max(iv[0] for iv in intervals)
+        hi = min(iv[1] for iv in intervals)
+        if lo > hi:
+            return None
+        return (lo, hi)
+
+    for vec in vectors:
+        vid = vec["id"]
+        scenario = vec["scenario"]
+
+        if scenario.startswith("marzullo_"):
+            intervals = vec["intervals"]
+            computed = marzullo_intersect(intervals)
+            if computed is None:
+                if vec["expected_non_empty"]:
+                    drifts.append((vid, f"marzullo intersection empty but expected_non_empty=true"))
+                    continue
+                checked += 1
+                continue
+            if not vec["expected_non_empty"]:
+                drifts.append((vid, f"marzullo intersection non-empty ({computed}) but expected_non_empty=false"))
+                continue
+            lo_c, hi_c = computed
+            lo_e = vec["expected_intersection_lo"]
+            hi_e = vec["expected_intersection_hi"]
+            if abs(lo_c - lo_e) > tol:
+                drifts.append((vid, f"marzullo lo drift: computed={lo_c} expected={lo_e}"))
+                continue
+            if abs(hi_c - hi_e) > tol:
+                drifts.append((vid, f"marzullo hi drift: computed={hi_c} expected={hi_e}"))
+                continue
+            checked += 1
+            continue
+
+        if scenario.startswith("lamport_"):
+            events = vec["events"]
+            t_a = events[0]["T"]
+            t_b = events[1]["T"]
+            expected_lt = vec["expected_T_a_lt_T_b"]
+            computed_lt = t_a < t_b
+            if computed_lt != expected_lt:
+                drifts.append((vid, f"lamport T_a<T_b drift: T_a={t_a} T_b={t_b} computed={computed_lt} expected={expected_lt}"))
+                continue
+            if vec.get("expected_T_b_lt_T_c") is not None:
+                t_c = events[2]["T"]
+                expected_lt_bc = vec["expected_T_b_lt_T_c"]
+                computed_lt_bc = t_b < t_c
+                if computed_lt_bc != expected_lt_bc:
+                    drifts.append((vid, f"lamport T_b<T_c drift: T_b={t_b} T_c={t_c} computed={computed_lt_bc} expected={expected_lt_bc}"))
+                    continue
+            checked += 1
+            continue
+
+        if scenario.startswith("bounded_drift_"):
+            tau_n = vec["tau_n"]
+            rho = vec["rho"]
+            delta_max = vec["delta_max"]
+            computed_bound = tau_n * rho + 2.0 * delta_max
+            expected_bound = vec["expected_drift_bound"]
+            if abs(computed_bound - expected_bound) > tol:
+                drifts.append((vid, f"bounded-drift drift: computed={computed_bound} expected={expected_bound}"))
+                continue
+            checked += 1
+            continue
+
+        drifts.append((vid, f"unknown scenario prefix: {scenario}"))
+
+    report["clock_drift_defense"] = {
+        "paper_section": payload["paper_section"],
+        "model": payload["model"],
+        "tolerance_s": tol,
+        "vectors_total": len(vectors),
+        "vectors_passed": checked,
+        "drifts": drifts,
+    }
+    return 0 if not drifts else 1
+
+
+def audit_bayesian_backoff(path: Path, report: dict) -> int:
+    with path.open("r", encoding="utf-8") as f:
+        payload = json.load(f)
+    vectors = payload["vectors"]
+    lam = payload["model"]["lambda_scale"]
+    k = payload["model"]["k_shape"]
+    tol = BAYESIAN_TOLERANCE_MS
+    checked = 0
+    drifts = []
+    for vec in vectors:
+        t = vec["keep_alive_probe_seconds"]
+        s_n = vec["indicator_function_S_n"]
+        F = 1.0 - math.exp(-((t / lam) ** k))
+        computed_backoff_ms = (1.0 - F) * 1000.0 * (0.4 + 0.6 * s_n)
+        expected_backoff_ms = vec["expected_backoff_ms"]
+        if abs(computed_backoff_ms - expected_backoff_ms) > tol:
+            drifts.append(
+                (
+                    vec["id"],
+                    f"backoff drift: computed={computed_backoff_ms:.9f} expected={expected_backoff_ms} (F={F:.12f})",
+                )
+            )
+            continue
+        checked += 1
+    report["bayesian_backoff"] = {
+        "paper_section": payload["paper_section"],
+        "lambda_scale": lam,
+        "k_shape": k,
+        "tolerance_ms": tol,
+        "vectors_total": len(vectors),
+        "vectors_passed": checked,
+        "drifts": drifts,
+    }
+    return 0 if not drifts else 1
+
+
 def main() -> int:
     fnv_path = TESTS_DIR / "fnv1a_64_vectors.json"
     l2_path = TESTS_DIR / "l2_projection_golden.json"
     keepalive_path = TESTS_DIR / "zero_token_keepalive_trace.json"
+    clock_drift_path = TESTS_DIR / "clock_drift_vectors.json"
+    bayesian_path = TESTS_DIR / "bayesian_backoff_golden.json"
 
     report = {
         "schema_version": "1.0.0",
@@ -239,10 +371,12 @@ def main() -> int:
         "tolerances": {
             "l2_norm": L2_TOLERANCE,
             "timing_us": TIMING_TOLERANCE_US,
+            "clock_drift_s": CLOCK_DRIFT_TOLERANCE_S,
+            "bayesian_ms": BAYESIAN_TOLERANCE_MS,
         },
     }
 
-    for path in (fnv_path, l2_path, keepalive_path):
+    for path in (fnv_path, l2_path, keepalive_path, clock_drift_path, bayesian_path):
         if not path.exists():
             print(f"MISSING: {path}", file=sys.stderr)
             return 1
@@ -250,13 +384,17 @@ def main() -> int:
     rc = 0
     rc |= audit_fnv1a(fnv_path, report)
     rc |= audit_l2_projection(l2_path, report)
+    rc |= audit_clock_drift(clock_drift_path, report)
+    rc |= audit_bayesian_backoff(bayesian_path, report)
     rc |= audit_keepalive_trace(keepalive_path, report)
 
     print("=" * 72)
     print("DSVH verification suite: math <-> trace drift auditor")
-    print(f"  Suite root:    {SUITE_ROOT}")
-    print(f"  L2 tolerance:  {L2_TOLERANCE:.0e}")
-    print(f"  Timing tol.:   {TIMING_TOLERANCE_US} us")
+    print(f"  Suite root:        {SUITE_ROOT}")
+    print(f"  L2 tolerance:      {L2_TOLERANCE:.0e}")
+    print(f"  Clock-drift tol.:  {CLOCK_DRIFT_TOLERANCE_S:.0e} s")
+    print(f"  Bayesian tol.:     {BAYESIAN_TOLERANCE_MS:.0e} ms")
+    print(f"  Timing tol.:       {TIMING_TOLERANCE_US} us")
     print("=" * 72)
 
     fnv = report["fnv1a_64"]
@@ -272,6 +410,22 @@ def main() -> int:
     print(f"  D = {l2['output_dimension']}, expected |v_i| = 1/sqrt(D) = {l2['expected_unit_magnitude']:.12f}")
     print(f"  vectors: {l2['vectors_passed']}/{l2['vectors_total']} pass")
     for entry in l2["drifts"]:
+        print(f"  DRIFT: {entry[0]}: {entry[1]}")
+
+    cd = report["clock_drift_defense"]
+    print()
+    print(f"[paper {cd['paper_section']}] Lamport/Marzullo clock-drift defense")
+    print(f"  tolerance: {cd['tolerance_s']:.0e} s (Marzullo lo/hi + bounded-drift bound)")
+    print(f"  vectors: {cd['vectors_passed']}/{cd['vectors_total']} pass")
+    for entry in cd["drifts"]:
+        print(f"  DRIFT: {entry[0]}: {entry[1]}")
+
+    bb = report["bayesian_backoff"]
+    print()
+    print(f"[paper {bb['paper_section']}] Bayesian backoff (Weibull model)")
+    print(f"  lambda = {bb['lambda_scale']}, k = {bb['k_shape']}, tolerance = {bb['tolerance_ms']:.0e} ms")
+    print(f"  vectors: {bb['vectors_passed']}/{bb['vectors_total']} pass")
+    for entry in bb["drifts"]:
         print(f"  DRIFT: {entry[0]}: {entry[1]}")
 
     ka = report["zero_token_keepalive"]

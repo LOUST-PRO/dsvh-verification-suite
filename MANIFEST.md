@@ -1,8 +1,10 @@
-# MANIFEST-2026-06-23-dsvh-verification-suite
+# MANIFEST-2026-06-24-dsvh-verification-suite
 
-> **Stage**: published (public, Apache-2.0)
-> **Last updated**: 2026-06-23, v0.1.1 — sync MANIFEST.md to reflect
-> the v0.1.0 push (tests/, auditors/, CITATION.cff now populated).
+> **Stage**: staging (local-first; v0.2.0 audit additions not yet
+> pushed)
+> **Last updated**: 2026-06-24, v0.2.0 candidate — added §4
+> Lamport/Marzullo vectors + auditor and §8 Bayesian auditor
+> (closes Gap 1 and Gap 2 from `MISSING-TESTS.md`).
 > **Companion paper repo**:
 > [LOUST-PRO/deterministic-sovereign-rag](https://github.com/LOUST-PRO/deterministic-sovereign-rag)
 > **Operator**: David Mireles — ORCID
@@ -46,9 +48,10 @@ dsvh-verification-suite/
 │   └── PROJECTS-arxiv-submission.md  # arXiv submission board spec
 ├── scripts/
 │   └── zenodo_oauth_test.py        # Zenodo API auth E2E test (stdlib, raw socket)
-├── tests/                          # 412 vectors/events across 4 JSON files
+├── tests/                          # 424 vectors/events across 5 JSON files
 │   ├── fnv1a_64_vectors.json       # 24 vectors, paper §3.1
 │   ├── l2_projection_golden.json   # 12 vectors, paper §3.3
+│   ├── clock_drift_vectors.json    # 12 vectors, paper §4 (v0.2.0)
 │   ├── bayesian_backoff_golden.json # 16 vectors, paper §8
 │   └── zero_token_keepalive_trace.json  # 6 traces / 360 events, paper §9
 └── auditors/
@@ -100,12 +103,13 @@ in the companion paper repo.
       board (operator-tooling references scrubbed)
 - [x] `scripts/zenodo_oauth_test.py` public-safe (operator
       config path → `<config-path>` placeholder)
-- [x] Test vectors populated in `tests/` — 24 FNV-1a + 12 L2 +
-      16 Bayesian + 360 trace events (added in v0.1.0)
-- [x] Math ↔ runtime drift auditor implemented in `auditors/`
-      (added in v0.1.0; recomputes paper claims, verifies
-      against recorded traces; verified 24/24 + 12/12 + 6/6
-      PASS)
+- [x] `tests/` vectors populated — 24 FNV-1a + 12 L2 + 12 clock-drift
+      + 16 Bayesian + 360 trace events (clock-drift added in v0.2.0)
+- [x] `auditors/math_runtime_drift.py` covers §3.1, §3.3, §4, §8, §9
+      (clock-drift defense + Bayesian backoff auditors added in
+      v0.2.0; recomputes paper claims, verifies against recorded
+      traces; verified 24/24 + 12/12 + 12/12 + 16/16 + 360/360
+      PASS in v0.2.0 staging)
 - [x] Public-surface curator sweep verdict: clean
       (13 IP-boundary leaks scrubbed pre-publish of v0.1.0)
 

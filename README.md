@@ -3,6 +3,7 @@
 > **Companion paper**: [LOUST-PRO/deterministic-sovereign-rag](https://github.com/LOUST-PRO/deterministic-sovereign-rag)
 > **Operator**: David Mireles — ORCID [0009-0008-4374-2254](https://orcid.org/0009-0008-4374-2254)
 > **License**: Apache-2.0
+> **Languages**: English (this file) · [Español](./README.es.md)
 
 This repository packages the **verification suite** that backs the
 formalization in the companion paper
@@ -34,23 +35,34 @@ the public-surface curator sweep applied before publication.
 
 ```
 dsvh-verification-suite/
-├── README.md                       # this file
+├── README.md                       # this file (EN)
+├── README.es.md                    # Spanish translation
 ├── LICENSE                         # Apache-2.0
 ├── MANIFEST.md                     # publication provenance + open items
+├── TRACEABILITY.md                 # paper ↔ vectors ↔ auditor map
+├── MISSING-TESTS.md                # proposed gaps (not implemented)
+├── CITATION.cff                    # ORCID + Apache-2.0 metadata
 ├── .gitignore                      # defensive (IP-boundary + secrets)
-├── scripts/                        # Zenodo API authentication E2E test
-│   └── zenodo_oauth_test.py        # (referenced from MANIFEST §3)
+├── scripts/
+│   └── zenodo_oauth_test.py        # Zenodo API auth E2E test (stdlib, raw socket)
+├── tests/                          # 412 vectors/events across 4 JSON files
+│   ├── README.md                   # JSON contract, schema, scope
+│   ├── fnv1a_64_vectors.json       # 24 vectors, paper §3.1
+│   ├── l2_projection_golden.json   # 12 vectors, paper §3.3
+│   ├── bayesian_backoff_golden.json # 16 vectors, paper §8
+│   └── zero_token_keepalive_trace.json  # 6 traces / 360 events, paper §9
+├── auditors/
+│   ├── README.md                   # exit codes, tolerances, scope
+│   └── math_runtime_drift.py       # math ↔ trace drift auditor (stdlib)
 └── .github/
     ├── DISCUSSIONS.md              # Discussions categories spec
     └── PROJECTS-arxiv-submission.md  # arXiv submission board spec
 ```
 
-The test vectors (`tests/`), trace dumps (`traces/`), and the
-math ↔ runtime drift auditor (`auditors/`) are tracked as
-**open items** in [`MANIFEST.md`](./MANIFEST.md) §3 and are
-filled incrementally as the verification suite matures. The
-artifact paths are reserved; see MANIFEST §3 for the current
-completion status.
+The 412 entries across `tests/` are anchored to the companion
+paper via the `paper_section` field declared in each JSON, and are
+verified by `python3 auditors/math_runtime_drift.py` from the
+suite root (exit `0` = PASS, exit `1` = FAIL).
 
 ## What is NOT in this repository
 
